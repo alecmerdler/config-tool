@@ -97,9 +97,11 @@ func ValidateDatabaseConnection(uri *url.URL) error {
 		if err != nil {
 			// String if there is no port
 			psqlInfo = fmt.Sprintf("host=%s user=%s password=%s dbname=%s sslmode=disable", host, user, password, dbname)
+			fmt.Println(psqlInfo)
 		} else {
 			// String if there is a port
 			psqlInfo = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+			fmt.Println(psqlInfo)
 		}
 
 		db, err = sql.Open("postgres", psqlInfo)

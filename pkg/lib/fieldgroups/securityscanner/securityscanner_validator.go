@@ -22,22 +22,22 @@ func (fg *SecurityScannerFieldGroup) Validate(opts shared.Options) []shared.Vali
 	}
 
 	// If v2 endpoint is present
-	if len(fg.SecurityScannerEndpoint) > 0 {
-		// Check for endpoint
-		if ok, err := shared.ValidateRequiredString(fg.SecurityScannerEndpoint, "SECURITY_SCANNER_ENDPOINT", "SecurityScanner"); !ok {
-			errors = append(errors, err)
-		}
+	// if len(fg.SecurityScannerEndpoint) > 0 {
+	// 	// Check for endpoint
+	// 	if ok, err := shared.ValidateRequiredString(fg.SecurityScannerEndpoint, "SECURITY_SCANNER_ENDPOINT", "SecurityScanner"); !ok {
+	// 		errors = append(errors, err)
+	// 	}
 
-		// Check endpoint is valid url
-		if ok, err := shared.ValidateIsURL(fg.SecurityScannerEndpoint, "SECURITY_SCANNER_ENDPOINT", "SecurityScanner"); !ok {
-			errors = append(errors, err)
-		}
+	// 	// Check endpoint is valid url
+	// 	if ok, err := shared.ValidateIsURL(fg.SecurityScannerEndpoint, "SECURITY_SCANNER_ENDPOINT", "SecurityScanner"); !ok {
+	// 		errors = append(errors, err)
+	// 	}
 
-		// Check that endpoint is reachable
-		if ok, err := shared.ValidateHostIsReachable(fg.SecurityScannerEndpoint, "SECURITY_SCANNER_ENDPOINT", "SecurityScanner"); !ok {
-			errors = append(errors, err)
-		}
-	}
+	// 	// Check that endpoint is reachable
+	// 	if ok, err := shared.ValidateHostIsReachable(fg.SecurityScannerEndpoint, "SECURITY_SCANNER_ENDPOINT", "SecurityScanner"); !ok {
+	// 		errors = append(errors, err)
+	// 	}
+	// }
 
 	// If v4 endpoint is present
 	if len(fg.SecurityScannerV4Endpoint) > 0 {

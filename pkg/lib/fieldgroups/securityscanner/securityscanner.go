@@ -52,10 +52,19 @@ func NewSecurityScannerFieldGroup(fullConfig map[string]interface{}) (*SecurityS
 		}
 	}
 	if value, ok := fullConfig["SECURITY_SCANNER_V4_NAMESPACE_WHITELIST"]; ok {
-		newSecurityScannerFieldGroup.SecurityScannerV4NamespaceWhitelist, ok = value.([]string)
-		if !ok {
-			return newSecurityScannerFieldGroup, errors.New("SECURITY_SCANNER_V4_NAMESPACE_WHITELIST must be of type []string")
+		// newSecurityScannerFieldGroup.SecurityScannerV4NamespaceWhitelist = value.([]string)
+		for _, element := range value.([]interface{}) {
+			strElement, ok := element.(string)
+			if !ok {
+				return newSecurityScannerFieldGroup, errors.New("SECURITY_SCANNER_V4_NAMESPACE_WHITELIST must be of type []string")
+			}
+
+			newSecurityScannerFieldGroup.SecurityScannerV4NamespaceWhitelist = append(
+				newSecurityScannerFieldGroup.SecurityScannerV4NamespaceWhitelist,
+				strElement,
+			)
 		}
+
 	}
 
 	return newSecurityScannerFieldGroup, nil
