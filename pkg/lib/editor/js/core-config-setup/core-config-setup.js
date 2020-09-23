@@ -277,12 +277,22 @@ angular.module("quay-config")
             return;
           }
 
+<<<<<<< HEAD
           var query = $.find(".ng-invalid");
 
           console.log(query)
           if (query && query.length) {   
             query[1].scrollIntoView();
             query[1].focus();
+=======
+          var query = $element.find("ng-invalid");
+
+          console.log(query)
+          if (query && query.length) {
+            
+            query[0].scrollIntoView();
+            query.focus();
+>>>>>>> 3d2c703... fixing focus
           }
         };
 
