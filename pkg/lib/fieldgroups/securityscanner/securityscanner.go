@@ -14,6 +14,8 @@ type SecurityScannerFieldGroup struct {
 	SecurityScannerNotifications        bool     `default:"false" validate:"" json:"SECURITY_SCANNER_NOTIFICATIONS" yaml:"SECURITY_SCANNER_NOTIFICATIONS"`
 	SecurityScannerV4Endpoint           string   `default:"" validate:"" json:"SECURITY_SCANNER_V4_ENDPOINT" yaml:"SECURITY_SCANNER_V4_ENDPOINT"`
 	SecurityScannerV4NamespaceWhitelist []string `default:"[]" validate:"" json:"SECURITY_SCANNER_V4_NAMESPACE_WHITELIST" yaml:"SECURITY_SCANNER_V4_NAMESPACE_WHITELIST"`
+	SecurityScannerV4PSK                string   `default:"" json:"SECURITY_SCANNER_V4_PSK" yaml:"SECURITY_SCANNER_V4_PSK"`
+	SecurityScannerV4SignJWT            string   `default:"" json:"SECURITY_SCANNER_V4_SIGN_JWT" yaml:"SECURITY_SCANNER_V4_SIGN_JWT"`
 }
 
 // NewSecurityScannerFieldGroup creates a new SecurityScannerFieldGroup
