@@ -381,7 +381,7 @@
     },
     "SECURITY_SCANNER_V4_PSK": {
       "type": "string",
-      "description": "If 'SECURITY_SCANNER_V4_SIGN_JWT' true, whether to use psk or Quay key server. If PSK is desired define the key in this config variable.",
+      "description": "If 'SECURITY_SCANNER_V4_SIGN_JWT', Quay will sign JWTs with either the key provided by `SECURITY_SCANNER_V4_PSK' (if specified here) or the Quay instance's private key otherwise.",
       "x-example": "secret",
       "ct-default": false,
       "ct-validate": "",

@@ -745,6 +745,23 @@
                 </div>
               </td>
             </tr>
+            <tr>
+              <td>Sign JWTs: </td>
+              <td>
+                <div class="config-bool-field" binding="config.SECURITY_SCANNER_V4_SIGN_JWT" is-readonly="fieldGroupReadonly('SecurityScanner')">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Security Scanner PSK:</td>
+              <td>
+                <span class="config-string-field" binding="config.SECURITY_SCANNER_V4_PSK" 
+                      is-readonly="fieldGroupReadonly('SecurityScanner')" placeholder="Base64 Encoded PSK"></span>
+              </td>
+              <td>
+                <button ng-click="generateClairPSK()">Generate PSK</button>
+              </td>
+            </tr>
           </table>
         </div>
       </div>

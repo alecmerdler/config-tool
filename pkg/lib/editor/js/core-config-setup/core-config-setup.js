@@ -277,22 +277,12 @@ angular.module("quay-config")
             return;
           }
 
-<<<<<<< HEAD
           var query = $.find(".ng-invalid");
 
           console.log(query)
           if (query && query.length) {   
             query[1].scrollIntoView();
             query[1].focus();
-=======
-          var query = $element.find("ng-invalid");
-
-          console.log(query)
-          if (query && query.length) {
-            
-            query[0].scrollIntoView();
-            query.focus();
->>>>>>> 3d2c703... fixing focus
           }
         };
 
@@ -718,6 +708,12 @@ angular.module("quay-config")
             }
           }
         };
+
+        var generateRandomString = () => Math.random().toString(20).substr(2, 256)
+
+        $scope.generateClairPSK = function() {
+            $scope.config['SECURITY_SCANNER_V4_PSK'] = btoa(generateRandomString())
+        }
 
         // Validate and update storage config on update.
         var refreshStorageConfig = function() {
